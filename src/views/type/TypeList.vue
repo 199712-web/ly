@@ -3,7 +3,7 @@
 		<el-row>
 			<!-- 工具条 -->
 			<el-col :span="64" class="toolbar">
-				<el-form :inline="true" :model="filters" ref="filters">
+				<el-form :inline="true" ref="filters">
 					<el-form-item>
 						<el-input placeholder="类型"></el-input>
 					</el-form-item>
@@ -27,7 +27,7 @@
 		name: 'typelist',
 		data(){
 			return{
-				input: '000'
+				input: ''
 			}
 		}
 	}
