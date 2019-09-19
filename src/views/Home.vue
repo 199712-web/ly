@@ -26,20 +26,20 @@
 				<transition name="el-fade-in">
 				<el-menu :default-active="$route.path" class="el-menu-vertical-demo el-menu-vertical-demo-main" style="width: 100%" @open="handleopen" @close="handleclose" @select="handleselect"
 					 unique-opened router v-show="!collapsed">
-					 <template v-for="(item,index) in rolePermis" v-if="item.children.length > 0">
+					 <!-- <template v-for="(item,index) in rolePermis" v-if="item.children.length > 0">
 						 <el-submenu :index="index+''">
 							 <template slot="title"><i :class="item.iconCls"></i>{{item.name}}</template>
 							 <el-menu-item v-for="child in item.children" :index="child.url" :key="child.url" v-if="true">{{child.name}}</el-menu-item>
 						 </el-submenu>
 						 <el-menu-item v-if="item.url!='/' && item.children.length>0" :index="item.children[0].url"><i :class="item.iconCls"></i>{{item.children[0].name}}</el-menu-item>
-					 </template>
-					<!-- <template v-for="(item,index) in $router.options.routes" v-if="!item.hidden">
+					 </template> -->
+					<template v-for="(item,index) in $router.options.routes" v-if="!item.hidden">
 						<el-submenu :index="index+''" v-if="!item.leaf">
 							<template slot="title"><i :class="item.iconCls"></i>{{item.name}}</template>
 							<el-menu-item v-for="child in item.children" :index="child.path" :key="child.path" v-if="!child.hidden">{{child.name}}</el-menu-item>
 						</el-submenu>
 						<el-menu-item v-if="item.leaf&&item.children.length>0" :index="item.children[0].path"><i :class="item.iconCls"></i>{{item.children[0].name}}</el-menu-item>
-					</template> -->
+					</template>
 				</el-menu>
 			 </transition>
 				<!--导航菜单-折叠后-->

@@ -61,7 +61,7 @@ const router = new VueRouter({
 })
 
 // url 拦截
-router.beforeEach((to, from, next) => {
+/* router.beforeEach((to, from, next) => {
   if (to.path == '/login') {
     sessionStorage.removeItem('user');
   }
@@ -89,7 +89,7 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
-})
+}) */
 router.afterEach(transition => {
 })
 

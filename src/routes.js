@@ -12,6 +12,7 @@ import Statistics from './views/system/Statistics.vue'
 import LoginLog from './views/system/LoginLog.vue'
 import Ueditor from './views/ueditor.vue'
 import TaskList from './views/task/TaskList'
+import TypeList from './views/type/TypeList'
 
 
 let router = [
@@ -28,7 +29,25 @@ let router = [
         hidden: true
     },
     //{ path: '/main', component: Main },
-    {
+	{
+	    path: '/',
+	    component: Home,
+	    name: '数据字典',
+	    iconCls: 'icon iconfont icon-dic-manager',
+	    children: [
+	        { path: '/dictionaryList', component: DictionaryList, name: '字典属性' },
+	    ]
+	},
+	{
+	    path: '/',
+	    component: Home,
+	    name: '类型管理',
+	    iconCls: 'icon iconfont icon-dic-manager',
+	    children: [
+	        { path: '/TypeList', component: TypeList, name: '类型列表' },
+	    ]
+	},
+    /* {
         path: '/',
         component: Home,
         name: '任务管理',
@@ -36,7 +55,8 @@ let router = [
         children: [
             { path: '/tasklist', component: TaskList, name: '任务列表'},
         ]
-    },
+    }, */
+
     {
         path: '/',
         component: Home,
@@ -61,15 +81,6 @@ let router = [
     {
         path: '/',
         component: Home,
-        name: '数据字典',
-        iconCls: 'icon iconfont icon-dic-manager',
-        children: [
-            { path: '/dictionaryList', component: DictionaryList, name: '字典属性' },
-        ]
-    },
-    {
-        path: '/',
-        component: Home,
         name: '系统管理',
         iconCls: 'icon iconfont icon-xitongguanli',
         children: [
@@ -79,7 +90,7 @@ let router = [
 
         ]
     },
-    {
+    /* {
         path: '/',
         component: Home,
         name: 'TEST',
@@ -87,7 +98,8 @@ let router = [
         children: [
             { path: '/Test', component: Test, name: '测试页面' },
         ]
-    },
+    }, */
+	
     {
         path: '*',
         hidden: true,
